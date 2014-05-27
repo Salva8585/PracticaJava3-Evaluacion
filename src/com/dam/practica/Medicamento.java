@@ -9,9 +9,9 @@ package com.dam.practica;
  * @author DAM1
  */
 public class Medicamento {
-    String nombre;
+    String nombre, principioActivo;
     double precio;
-    int  tipo;
+    int  tipo,fechaFab,fechaCad,miligramos;
     
     
 }
