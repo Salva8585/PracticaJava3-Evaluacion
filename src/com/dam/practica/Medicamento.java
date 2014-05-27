@@ -10,6 +10,7 @@ package com.dam.practica;
  */
 public class Medicamento {
 
+
     String nombre, principiosActivos;
 
     public Medicamento(String nombre, String principiosActivos) {
@@ -24,6 +25,7 @@ public class Medicamento {
     public String getPrincipiosActivos() {
         return principiosActivos;
     }
+
 
 
 }
