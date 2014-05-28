@@ -18,9 +18,6 @@ public class Lote {
     double precio;
     int tipo, totalUnidadesLote;
     Date fechaFabricacion, fechaCaducidad;
-    
-    
-    
 
     public Lote(double precio, int tipo, int totalUnidadesLote,Date  fechaFabricacion,Date  fechaCaducidad) {
         this.precio = precio;
@@ -58,5 +55,13 @@ public class Lote {
     public void setTotalUnidadesMedicamento(int totalUnidadesLote) {
         this.totalUnidadesLote = totalUnidadesLote;
     }
+
+    @Override
+    public String toString() {
+        return "Lote{" + "precio=" + precio + ", tipo=" + tipo + ", totalUnidadesLote=" + totalUnidadesLote + ", fechaFabricacion=" + fechaFabricacion + ", fechaCaducidad=" + fechaCaducidad + '}';
+    }
+    
+    
+    
     
 }

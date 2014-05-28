@@ -7,7 +7,7 @@ package com.dam.practica;
 
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.HashMap;
+
 
 /**
  *
@@ -16,27 +16,23 @@ import java.util.HashMap;
 public class Bayer {
 
    
-    private HashMap<Medicamento,ArrayList<Lote>> tabla = new HashMap<>();
+    ArrayList<Medicamento> listado=new ArrayList<>();
     
 
-    public void añadirMedicamento(String nombre,String principiosActivos,double precio,int  tipo, int totalUnidadesLote,Date fechaFabricacion,Date fechaCaducidad){
+    public void añadirMedicamento(String nombre,String principiosActivos,double precio,int  tipo, int totalUnidadesLote,Date fechaFabricacion,Date fechaCaducidad, ArrayList<Lote> listadoLote){
          Medicamento  m = new Medicamento(nombre, principiosActivos);
          Lote l=new Lote(precio, tipo, totalUnidadesLote, fechaFabricacion, fechaCaducidad);
-          
-        if (tabla.containsKey(m)) {
-            tabla.get(m).add(l);
+         
+        if (listado.contains(m)) {
+            m.setListadoLote(l);
         }
         else{
-           ArrayList<Lote> Lote = new ArrayList<>();
-           tabla.put(m,Lote);   
-           tabla.get(m).add(l);
+           listado.add(m);
+           m.setListadoLote(l);
         }
     }
-  
- 
 
-    public boolean busqueda(Medicamento m) {
-        return true;
+    public void busqueda(Medicamento m) {     
     }
 
     public void ventaMedicamento(Medicamento m) {
