@@ -4,7 +4,10 @@
  */
 package com.dam.practica;
 
-import java.util.GregorianCalendar;
+
+
+import java.util.Date;
+
 
 /**
  *
@@ -13,13 +16,16 @@ import java.util.GregorianCalendar;
 public class Lote {
 
     double precio;
-    int tipo, totalUnidadesMedicamento;
-    GregorianCalendar fechaFabricacion, fechaCaducidad;
+    int tipo, totalUnidadesLote;
+    Date fechaFabricacion, fechaCaducidad;
+    
+    
+    
 
-    public Lote(double precio, int tipo, int totalUnidadesMedicamento, GregorianCalendar fechaFabricacion, GregorianCalendar fechaCaducidad) {
+    public Lote(double precio, int tipo, int totalUnidadesLote,Date  fechaFabricacion,Date  fechaCaducidad) {
         this.precio = precio;
         this.tipo = tipo;
-        this.totalUnidadesMedicamento = totalUnidadesMedicamento;
+        this.totalUnidadesLote = totalUnidadesLote;
         this.fechaFabricacion = fechaFabricacion;
         this.fechaCaducidad = fechaCaducidad;
     }
@@ -32,24 +38,25 @@ public class Lote {
         return tipo;
     }
 
-    public int getTotalUnidadesMedicamento() {
-        return totalUnidadesMedicamento;
+    public int getTotalUnidadesLote() {
+        return totalUnidadesLote;
     }
 
-    public GregorianCalendar getFechaFabricacion() {
+    public Date getFechaFabricacion() {
         return fechaFabricacion;
     }
 
-    public GregorianCalendar getFechaCaducidad() {
+    public Date getFechaCaducidad() {
         return fechaCaducidad;
     }
+
 
     public void setPrecio(double precio) {
         this.precio = precio;
     }
 
-    public void setTotalUnidadesMedicamento(int totalUnidadesMedicamento) {
-        this.totalUnidadesMedicamento = totalUnidadesMedicamento;
+    public void setTotalUnidadesMedicamento(int totalUnidadesLote) {
+        this.totalUnidadesLote = totalUnidadesLote;
     }
     
 }
