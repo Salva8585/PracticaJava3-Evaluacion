@@ -21,9 +21,10 @@ public class Bayer {
 
         if (listado.contains(m)) {
             m.setListadoLote(m.listadoLote);
-        } else {
-            listado.add(m);
-            m.setListadoLote(m.listadoLote);
+        }
+        else{
+           listado.add(m);
+           m.setListadoLote(m.listadoLote);
         }
     }
 
