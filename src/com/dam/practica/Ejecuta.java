@@ -9,7 +9,9 @@ package com.dam.practica;
  * @author DAM1
  */
 public class Ejecuta {
-    
+String busqueda;//variable que  introduce el  ususario para la  busqueda
+
+
     //Nota cuando pedamos   las  fechas al usuario por consola 
     //se las pedimos  como String  y luego la  damos  formato 
     //SimpleDateFormat formato = new SimpleDateFormat( "yyyy-MM-dd" );
