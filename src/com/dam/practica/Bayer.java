@@ -44,11 +44,13 @@ public class Bayer {
     }
 
     public boolean borradoMedicamento(String borrar, Medicamento m) {
+        int borrado1=m.nombre.indexOf(borrar);
+        int borrado2=m.principiosActivos.indexOf(borrar);
         for (int i = 0; i < listado.size(); i++) {
-            if(m.nombre.equalsIgnoreCase(borrar)){
+            if((m.nombre.equalsIgnoreCase(borrar)) || (borrado1!=-1)){
                 listado.remove(m);
             }
-            else if (m.principiosActivos.equalsIgnoreCase(borrar)){
+            else if ((m.principiosActivos.equalsIgnoreCase(borrar))||(borrado2 != -1)){
                 listado.remove(m);
             }
         }
