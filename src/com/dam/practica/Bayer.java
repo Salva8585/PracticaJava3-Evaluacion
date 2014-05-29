@@ -29,10 +29,12 @@ public class Bayer {
     }
 
     public void busqueda(String busqueda, Medicamento m) {
+        int verificar1=m.nombre.indexOf(busqueda);
+        int verificar2=m.principiosActivos.indexOf(busqueda);
         for (int i = 0; i < listado.size(); i++) {
-            if (m.nombre.equalsIgnoreCase(busqueda)) {
+            if ((m.nombre.equalsIgnoreCase(busqueda))||(verificar1!=-1)) {
                 System.out.println(m);
-            } else if (m.principiosActivos.equals(busqueda)) {
+            } else if ((m.principiosActivos.equals(busqueda))||(verificar2!=-1) ){
                 System.out.println(m);
             }
         }
