@@ -25,11 +25,11 @@ public class Bayer {
          Lote l=new Lote(precio, tipo, totalUnidadesLote, fechaFabricacion, fechaCaducidad);
          
         if (listado.contains(m)) {
-            m.setListadoLote(l);
+            m.setListadoLote(m.listadoLote);
         }
         else{
            listado.add(m);
-           m.setListadoLote(l);
+           m.setListadoLote(m.listadoLote);
         }
     }
 
