@@ -7,6 +7,7 @@ package com.dam.practica;
 
 
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -17,9 +18,9 @@ public class Lote {
 
     double precio;
     int tipo, totalUnidadesLote;
-    Date fechaFabricacion, fechaCaducidad;
+    GregorianCalendar fechaFabricacion, fechaCaducidad;
 
-    public Lote(double precio, int tipo, int totalUnidadesLote,Date  fechaFabricacion,Date  fechaCaducidad) {
+    public Lote(double precio, int tipo, int totalUnidadesLote,GregorianCalendar  fechaFabricacion,GregorianCalendar  fechaCaducidad) {
         this.precio = precio;
         this.tipo = tipo;
         this.totalUnidadesLote = totalUnidadesLote;
@@ -39,14 +40,13 @@ public class Lote {
         return totalUnidadesLote;
     }
 
-    public Date getFechaFabricacion() {
+    public GregorianCalendar getFechaFabricacion() {
         return fechaFabricacion;
     }
 
-    public Date getFechaCaducidad() {
+    public GregorianCalendar getFechaCaducidad() {
         return fechaCaducidad;
     }
-
 
     public void setPrecio(double precio) {
         this.precio = precio;

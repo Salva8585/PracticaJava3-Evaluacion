@@ -7,6 +7,7 @@ package com.dam.practica;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.GregorianCalendar;
 
 
 /**
@@ -19,7 +20,7 @@ public class Bayer {
     ArrayList<Medicamento> listado=new ArrayList<>();
     
 
-    public void añadirMedicamento(String nombre,String principiosActivos,double precio,int  tipo, int totalUnidadesLote,Date fechaFabricacion,Date fechaCaducidad, ArrayList<Lote> listadoLote){
+    public void añadirMedicamento(String nombre,String principiosActivos,double precio,int  tipo, int totalUnidadesLote, GregorianCalendar fechaFabricacion,GregorianCalendar fechaCaducidad, ArrayList<Lote> listadoLote){
          Medicamento  m = new Medicamento(nombre, principiosActivos);
          Lote l=new Lote(precio, tipo, totalUnidadesLote, fechaFabricacion, fechaCaducidad);
          
