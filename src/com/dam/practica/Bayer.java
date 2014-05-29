@@ -41,7 +41,15 @@ public class Bayer {
     public void ventaMedicamento(Medicamento m) {
     }
 
-    public boolean borradoMedicamento(String nombre) {
+    public boolean borradoMedicamento(String borrar, Medicamento m) {
+        for (int i = 0; i < listado.size(); i++) {
+            if(m.nombre.equalsIgnoreCase(borrar)){
+                listado.remove(m);
+            }
+            else if (m.principiosActivos.equalsIgnoreCase(borrar)){
+                listado.remove(m);
+            }
+        }
         return true;
     }
 }
