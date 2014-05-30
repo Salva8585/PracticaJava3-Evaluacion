@@ -25,7 +25,8 @@ public class Bayer {
             
             for (int i = 0; i < m.listadoLote.size(); i++) {
                 double cambioPrecio=l.precio;
-                m.listadoLote(i).setPrecio=cambioPrecio;// no soluciono el error
+                m.listadoLote.get(i).setPrecio(cambioPrecio);
+                //m.listadoLote(i).setPrecio=cambioPrecio;// no soluciono el error
                 //de la  arraylist del medicamento M coger el  precio  y modificarlo por el precio del nuevo lote introducido
             }
         }
