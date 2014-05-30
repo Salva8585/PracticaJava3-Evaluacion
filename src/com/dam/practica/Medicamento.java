@@ -15,11 +15,13 @@ public class Medicamento {
 
     String nombre, principiosActivos;
     ArrayList<Lote> listadoLote;
+    int unidades;
 
-    public Medicamento(String nombre, String principiosActivos) {
+    public Medicamento(String nombre, String principiosActivos,int unidades) {
         this.nombre = nombre;
         this.principiosActivos = principiosActivos;
         this.listadoLote = new ArrayList<>();
+        this.unidades = unidades;
     }
 
     public String getNombre() {
@@ -37,6 +39,15 @@ public class Medicamento {
     public void setListadoLote(ArrayList<Lote> listadoLote) {
         this.listadoLote = listadoLote;
     }
+
+    public int getUnidades() {
+        return unidades;
+    }
+
+    public void setUnidades(int unidades) {
+        this.unidades = unidades;
+    }
+    
 
     public boolean equals(Medicamento obj) {
         Medicamento m = (Medicamento) obj;

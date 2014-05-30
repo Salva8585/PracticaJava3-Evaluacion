@@ -63,9 +63,10 @@ public class Lote implements Comparable<Lote> {
 
     @Override
     public int compareTo(Lote o) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        //To change body of generated methods, choose Tools | Templates.
         // hay que  hacer un compare  tu que  organice de mas  cercana  a menos  cercana  la  fecha de caducidad 
         //con la  fecha del sistema
+        
     }
 
 }
