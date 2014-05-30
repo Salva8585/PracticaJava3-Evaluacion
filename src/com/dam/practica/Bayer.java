@@ -23,7 +23,7 @@ public class Bayer {
         if (listado.contains(consola)) {
             Medicamento m = (Medicamento) listado.get(listado.indexOf(consola));
             m.listadoLote.add(l);
-            m.unidades+l.totalUnidadesLote;
+            m.unidades+=l.totalUnidadesLote;
             // hay que saber el  total de  unidades que hay por medicamento 
             //le  sumamos  a unidades (que es el total)  las unidades del lote  añadido
 
@@ -35,7 +35,7 @@ public class Bayer {
             Medicamento m2 = new Medicamento(nombre, principiosActivos, unidades);
             listado.add(m2);
             m2.listadoLote.add(l);
-             m.unidades+l.totalUnidadesLote;
+            m2.unidades+=l.totalUnidadesLote;
             // hay que saber el  total de  unidades que hay por medicamento 
             //le  sumamos  a unidades (que es el total)  las unidades del lote  añadido
         }

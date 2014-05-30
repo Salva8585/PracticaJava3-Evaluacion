@@ -6,6 +6,7 @@ package com.dam.practica;
 
 
 
+import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -66,6 +67,7 @@ public class Lote implements Comparable<Lote> {
         //To change body of generated methods, choose Tools | Templates.
         // hay que  hacer un compare  tu que  organice de mas  cercana  a menos  cercana  la  fecha de caducidad 
         //con la  fecha del sistema
+        Collections.sort(o);
         
     }
 
