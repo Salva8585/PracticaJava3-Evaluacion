@@ -15,16 +15,23 @@ public class Bayer {
 
     ArrayList<Medicamento> listado = new ArrayList<>();
 
-    public void añadirMedicamento(String nombre, String principiosActivos, double precio, int tipo, int totalUnidadesLote, GregorianCalendar fechaFabricacion, GregorianCalendar fechaCaducidad, ArrayList<Lote> listadoLote) {
-        Medicamento m = new Medicamento(nombre, principiosActivos);
+    public void añadirMedicamento(String consola,String nombre, String principiosActivos, double precio, int tipo, int totalUnidadesLote, GregorianCalendar fechaFabricacion, GregorianCalendar fechaCaducidad, ArrayList<Lote> listadoLote) {
+       
         Lote l = new Lote(precio, tipo, totalUnidadesLote, fechaFabricacion, fechaCaducidad);
 
-        if (listado.contains(m)) {
-            m.setListadoLote(m.listadoLote);
+        if (listado.contains(consola)) {
+            Medicamento m=(Medicamento)listado.get(listado.indexOf(consola));
+            m.listadoLote.add(l);
+            for (int i = 0; i < m.listadoLote.size(); i++) {
+                double cambioPrecio=l.precio;
+                m.listadoLote.set(i,precio)=cambioPrecio;
+                
+            }
         }
         else{
-           listado.add(m);
-           m.setListadoLote(m.listadoLote);
+            Medicamento m2 = new Medicamento(nombre, principiosActivos);
+           listado.add(m2);
+           m2.listadoLote.add(l);
         }
     }
 

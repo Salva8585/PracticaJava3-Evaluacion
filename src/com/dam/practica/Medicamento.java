@@ -43,7 +43,6 @@ public class Medicamento {
         return ((m.nombre.equals(nombre)) && (m.principiosActivos.equals(principiosActivos)));
 
     }
-
     @Override
     public String toString() {
         return "Medicamento{" + "nombre=" + nombre + ", principiosActivos=" + principiosActivos + ", lote=" + listadoLote + '}';
