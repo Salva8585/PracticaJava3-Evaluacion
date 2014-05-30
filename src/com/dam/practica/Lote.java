@@ -64,10 +64,16 @@ public class Lote implements Comparable<Lote> {
 
     @Override
     public int compareTo(Lote o) {
+        long milis1 = this.fechaCaducidad.getTimeInMillis();
+        long milis2 = o.fechaCaducidad.getTimeInMillis();
+        if (milis1 > milis2)    return  1;
+        else if (milis1>milis2)    return  -1;
+        else return 0;  
+                              
         //To change body of generated methods, choose Tools | Templates.
         // hay que  hacer un compare  tu que  organice de mas  cercana  a menos  cercana  la  fecha de caducidad 
         //con la  fecha del sistema
-        Collections.sort(o);
+        
         
     }
 
