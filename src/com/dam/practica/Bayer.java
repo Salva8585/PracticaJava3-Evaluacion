@@ -22,10 +22,11 @@ public class Bayer {
         if (listado.contains(consola)) {
             Medicamento m=(Medicamento)listado.get(listado.indexOf(consola));
             m.listadoLote.add(l);
+            
             for (int i = 0; i < m.listadoLote.size(); i++) {
                 double cambioPrecio=l.precio;
-                m.listadoLote.set(i,precio)=cambioPrecio;
-                
+                m.listadoLote(i).setPrecio=cambioPrecio;// no soluciono el error
+                //de la  arraylist del medicamento M coger el  precio  y modificarlo por el precio del nuevo lote introducido
             }
         }
         else{

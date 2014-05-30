@@ -14,7 +14,7 @@ import java.util.GregorianCalendar;
  *
  * @author DAM1
  */
-public class Lote {
+public class Lote implements Comparable<Lote> {
 
     double precio;
     int tipo, totalUnidadesLote;
@@ -60,8 +60,12 @@ public class Lote {
     public String toString() {
         return "Lote{" + "precio=" + precio + ", tipo=" + tipo + ", totalUnidadesLote=" + totalUnidadesLote + ", fechaFabricacion=" + fechaFabricacion + ", fechaCaducidad=" + fechaCaducidad + '}';
     }
-    
-    
-    
-    
+
+    @Override
+    public int compareTo(Lote o) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        // hay que  hacer un compare  tu que  organice de mas  cercana  a menos  cercana  la  fecha de caducidad 
+        //con la  fecha del sistema
+    }
+
 }
