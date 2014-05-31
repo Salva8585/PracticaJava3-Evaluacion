@@ -14,7 +14,7 @@ import java.util.GregorianCalendar;
 public class Bayer {
 
     ArrayList<Medicamento> listado = new ArrayList<>();
-
+    
     public void añadirMedicamento(String consola, String nombre, String principiosActivos,int unidades, double precio, int tipo,
             int totalUnidadesLote, GregorianCalendar fechaFabricacion, GregorianCalendar fechaCaducidad, ArrayList<Lote> listadoLote) {
 
@@ -53,7 +53,27 @@ public class Bayer {
         }
     }
 
-    public void ventaMedicamento(Medicamento m) {
+    public void ventaMedicamento(Medicamento m,int unidadesD, double precio) {
+        Lote lot = new Lote(precio, tipo, totalUnidadesLote, null, null);
+        System.out.println("introduce busqueda");
+        String buscar ="";
+        int verificar1 = m.nombre.indexOf(buscar);
+        int verificar2 = m.principiosActivos.indexOf(buscar);
+        for (int i = 0; i < listado.size(); i++) {
+            if ((m.nombre.equalsIgnoreCase(buscar)) || (verificar1 != -1)) {
+                System.out.println("introduce cuantos Nº Medicamentos que deseas");
+                if (m.unidades>=unidadesD) {
+                      System.out.println(unidadesD+" medicamentos vendidos  a " +lot.getPrecio()+ " € hace un total de = " +(unidadesD*lot.getPrecio()) );  
+                }
+                
+            } else if ((m.principiosActivos.equals(buscar)) || (verificar2 != -1)) {
+                 System.out.println("introduce cuantos Nº Medicamentos que deseas");
+                if (m.unidades>=unidadesD) {
+                    System.out.println(unidadesD+" medicamentos vendidos  a " +lot.getPrecio()+ " € hace un total de = " +(unidadesD*lot.getPrecio()) );  
+                }
+            }
+        }
+        
     }
 
     public boolean borradoMedicamento(String borrar, Medicamento m) {
