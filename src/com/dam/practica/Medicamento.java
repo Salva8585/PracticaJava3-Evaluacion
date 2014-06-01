@@ -1,27 +1,22 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.dam.practica;
 
 import java.util.ArrayList;
 import java.util.Objects;
 
-/**
- *
- * @author DAM1
- */
+
 public class Medicamento {
 
     String nombre, principiosActivos;
     ArrayList<Lote> listadoLote;
-    int unidades;
+    int unidades,tipo;
 
-    public Medicamento(String nombre, String principiosActivos,int unidades) {
+    public Medicamento(String nombre, String principiosActivos,int unidades,int tipo) {
         this.nombre = nombre;
         this.principiosActivos = principiosActivos;
         this.listadoLote = new ArrayList<>();
         this.unidades = unidades;
+        this.tipo=tipo;
     }
 
     public String getNombre() {
@@ -47,6 +42,11 @@ public class Medicamento {
     public void setUnidades(int unidades) {
         this.unidades = unidades;
     }
+
+    public int getTipo() {
+        return tipo;
+    }
+    
     
 
     public boolean equals(Medicamento obj) {
@@ -56,6 +56,6 @@ public class Medicamento {
     }
     @Override
     public String toString() {
-        return "Medicamento{" + "nombre=" + nombre + ", principiosActivos=" + principiosActivos + ", lote=" + listadoLote + '}';
+        return "Medicamento{" + "nombre=" + nombre + ", principiosActivos=" + principiosActivos + ", lote=" + listadoLote +", tipo=" + tipo + '}';
     }
 }

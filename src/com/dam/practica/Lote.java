@@ -1,7 +1,4 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.dam.practica;
 
 
@@ -11,19 +8,15 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 
-/**
- *
- * @author DAM1
- */
+
 public class Lote implements Comparable<Lote> {
 
     double precio;
-    int tipo, totalUnidadesLote;
+    int totalUnidadesLote;
     GregorianCalendar fechaFabricacion, fechaCaducidad;
 
-    public Lote(double precio, int tipo, int totalUnidadesLote,GregorianCalendar  fechaFabricacion,GregorianCalendar  fechaCaducidad) {
+    public Lote(double precio, int totalUnidadesLote,GregorianCalendar  fechaFabricacion,GregorianCalendar  fechaCaducidad) {
         this.precio = precio;
-        this.tipo = tipo;
         this.totalUnidadesLote = totalUnidadesLote;
         this.fechaFabricacion = fechaFabricacion;
         this.fechaCaducidad = fechaCaducidad;
@@ -31,10 +24,6 @@ public class Lote implements Comparable<Lote> {
 
     public double getPrecio() {
         return precio;
-    }
-
-    public int getTipo() {
-        return tipo;
     }
 
     public int getTotalUnidadesLote() {
@@ -59,7 +48,7 @@ public class Lote implements Comparable<Lote> {
 
     @Override
     public String toString() {
-        return "Lote{" + "precio=" + precio + ", tipo=" + tipo + ", totalUnidadesLote=" + totalUnidadesLote + ", fechaFabricacion=" + fechaFabricacion + ", fechaCaducidad=" + fechaCaducidad + '}';
+        return "Lote{" + "precio=" + precio  + ", totalUnidadesLote=" + totalUnidadesLote + ", fechaFabricacion=" + fechaFabricacion + ", fechaCaducidad=" + fechaCaducidad + '}';
     }
 
     @Override

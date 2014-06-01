@@ -1,15 +1,12 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package com.dam.practica;
 
-/**
- *
- * @author DAM1
- */
+
 public class Ejecuta {
 String busqueda;//variable que  introduce el  ususario para la  busqueda
+String  Consola;//nombre del medicamento que  vamos  añadir
+String venta;// medicamento que  desea comprar
+int  unidadesVenta;//unidades que  desea comprar
 
 
     //Nota cuando pedamos   las  fechas al usuario por consola 
