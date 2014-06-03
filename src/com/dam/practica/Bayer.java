@@ -54,7 +54,7 @@ public class Bayer {
             if (((m.nombre.equalsIgnoreCase(venta)) && (verificar1 != -1)) || ((m.principiosActivos.equals(venta)) || (verificar2 != -1))) {
                 if (m.unidades >= unidadesVenta) {
                     int contador = 0;
-                    while (contador == unidadesVenta) {
+                    while (contador != unidadesVenta) {
                         for (int j = 0; j < m.listadoLote.size(); j++) {
                             
                             //He puesto las  verificaciones en un solo if  xq  asi ahorramos  un 50% del codigo
@@ -86,3 +86,5 @@ public class Bayer {
         }
     }
 }
+//yo creo q em en los metedos metemos muchas variables que no son necesarias en realidad llamar a todo 
+//lo que tenemos en las clases dentro de los parantesis para eso tenemos las clases creadas con los get y set 
