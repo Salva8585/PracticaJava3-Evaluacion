@@ -3,6 +3,7 @@ package com.dam.practica;
 
 
 
+import java.util.Calendar;
 import java.util.Collections;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -18,8 +19,8 @@ public class Lote implements Comparable<Lote> {
     public Lote(double precio, int totalUnidadesLote,GregorianCalendar  fechaFabricacion,GregorianCalendar  fechaCaducidad) {
         this.precio = precio;
         this.totalUnidadesLote = totalUnidadesLote;
-        this.fechaFabricacion = fechaFabricacion;
-        this.fechaCaducidad = fechaCaducidad;
+        this.fechaFabricacion = new GregorianCalendar();
+        this.fechaCaducidad = fechaCaducidad;         
     }
 
     public double getPrecio() {
@@ -60,10 +61,8 @@ public class Lote implements Comparable<Lote> {
         else return 0;  
                               
         //To change body of generated methods, choose Tools | Templates.
-        // hay que  hacer un compare  tu que  organice de mas  cercana  a menos  cercana  la  fecha de caducidad 
+        // hay que  hacer un compare to que  organice de mas  cercana  a menos  cercana  la  fecha de caducidad 
         //con la  fecha del sistema
-        
-        
     }
 
 }

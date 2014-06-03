@@ -15,10 +15,13 @@ public class Medicamento {
         this.nombre = nombre;
         this.principiosActivos = principiosActivos;
         this.listadoLote = new ArrayList<>();
-        this.unidades = unidades;
+        this.unidades = 0;
         this.tipo=tipo;
     }
 
+    
+    
+    
     public String getNombre() {
         return nombre;
     }
