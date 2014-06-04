@@ -7,56 +7,66 @@ public class Bayer {
 
     ArrayList<Medicamento> listado = new ArrayList<>();
 
-    public void aÃ±adirMedicamento(Medicamento m, Lote l, String consola,boolean control) {
+    public void añadirMedicamento(Medicamento m, Lote l, String consola, int control) {
+        control=0;
+        for (int i = 0; i <=listado.size(); i++) {
 
-       
-        if (listado.contains(consola)) {
-            control=true;
-            m.listadoLote.add(l);
-            m.unidades += l.totalUnidadesLote;
+            if (listado.get(i).getNombre().contains(consola)) {
+                control = 1;
+                listado.get(i).listadoLote.add(l);
+                listado.get(i).setUnidades(listado.get(i).getUnidades()+l.getTotalUnidadesLote());
 
-            for (int i = 0; i < m.listadoLote.size(); i++) {
-                double cambioPrecio = l.precio;
-                m.listadoLote.get(i).setPrecio(cambioPrecio);
+                for (int j = 0; j <= m.listadoLote.size(); j++) {
+                    double cambioPrecio = l.getPrecio();
+                    listado.get(i).listadoLote.get(j).setPrecio(cambioPrecio);
+                }
+            } else {
+                control = 2;
+                listado.add(m);
+                m.listadoLote.add(l);
+                m.setUnidades(m.getUnidades()+l.getTotalUnidadesLote());
+
             }
-        } else {
-            control=false;
-            listado.add(m);
-            m.listadoLote.add(l);
-            m.unidades += l.totalUnidadesLote;
-
         }
     }
 
-    public void busqueda(String busqueda, Medicamento m) {
-        int verificar1 = m.nombre.indexOf(busqueda);
-        int verificar2 = m.principiosActivos.indexOf(busqueda);
+    public void busqueda(String busqueda) {
+
         int contadorEncontrados = 0;
         for (int i = 0; i < listado.size(); i++) {
-            if (((m.nombre.equalsIgnoreCase(busqueda)) && (verificar1 != -1)) || ((m.principiosActivos.equals(busqueda)) && (verificar2 != -1))) {
-                System.out.println(m);
+            if (((listado.get(i).getNombre().equalsIgnoreCase(busqueda)) && (listado.get(i).getNombre().indexOf(busqueda) != -1)) || ((listado.get(i).getPrincipiosActivos().equalsIgnoreCase(busqueda)) && (listado.get(i).getPrincipiosActivos().indexOf(busqueda) != -1))) {
+                System.out.println(listado.get(i).getNombre());
                 contadorEncontrados += 1;
             }
         }
         System.out.println("-Encontrados = " + contadorEncontrados);
     }
 
-    public void ventaMedicamento( String venta, int unidadesVenta) {
+    public void ventaMedicamento(String venta, int unidadesVenta) {
 
-        int verificar1 = listado.indexOf(venta);
-        int verificar2 = listado.indexOf(venta);
         for (int i = 0; i < listado.size(); i++) {
-            if(((listado.get(i).nombre.equalsIgnoreCase(venta))&& (verificar1 != -1))||((listado.get(i).principiosActivos.equalsIgnoreCase(venta))&& (verificar1 != -1))) {
-                if (listado.get(i).unidades >= unidadesVenta) {
-                    int contador = 0;
-                    while (contador != unidadesVenta) {
-                        for (int j = 0; j < listado.get(i).listadoLote.size();) {
-                            //He puesto las  verificaciones en un solo if  xq  asi ahorramos  un 50% del codigo
-                            //int  contador = a las  unidades  vendidas  en  cada  vuelta  del  buckle
-                            //el for recorre el  listado de lotes del Medicamento  y el while  controla  que  sean hasta las unidades solicitadas
-                            //hay que  ir  sacando unidades del lote empezando desde el primer lote  hasta  que lleguemos  a contador==unidadesVenta
-                            //si el primer  lote  tiene solo 5  unidades  y vamos a vender 10  ,  en la primera  vuelta   tenemos que  aÃ±adir contador+=5
-                            // y  como hemos  vendido el total de  ese lote hacer un remove del mismo
+            if (((listado.get(i).getNombre().equalsIgnoreCase(venta)) && (listado.get(i).getNombre().indexOf(venta) != -1)) || ((listado.get(i).getPrincipiosActivos().equalsIgnoreCase(venta)) && (listado.get(i).getPrincipiosActivos().indexOf(venta) != -1))) {
+                if (listado.get(i).getUnidades() >= unidadesVenta) {
+                    int contadorUnidadesVendidas = 0;
+                    while (contadorUnidadesVendidas != unidadesVenta) {
+                        int vueltas = 1;
+                        for (int j = 0; j <= vueltas;) {
+
+                            if (listado.get(i).listadoLote.get(j).getTotalUnidadesLote() < unidadesVenta) {
+                                contadorUnidadesVendidas += listado.get(i).listadoLote.get(j).getTotalUnidadesLote();
+                                listado.get(i).listadoLote.remove(j);
+                                vueltas++;
+                            }
+                            if (listado.get(i).listadoLote.get(j).getTotalUnidadesLote() > unidadesVenta) {
+                                listado.get(i).listadoLote.get(j).setTotalUnidadesMedicamento( listado.get(i).listadoLote.get(j).getTotalUnidadesLote()-unidadesVenta);
+                                contadorUnidadesVendidas += unidadesVenta;
+                            }
+                            if (listado.get(i).listadoLote.get(j).getTotalUnidadesLote() == unidadesVenta) {
+                                contadorUnidadesVendidas += listado.get(i).listadoLote.get(j).getTotalUnidadesLote();
+                                listado.get(i).listadoLote.remove(j);
+                            } else {
+                                j++;
+                            }
                         }
                     }
                 } else {
@@ -69,25 +79,28 @@ public class Bayer {
     }
 
     public void borradoMedicamento(String borrar, Medicamento m) {
-        int borrado1 = m.nombre.indexOf(borrar);
-        int borrado2 = m.principiosActivos.indexOf(borrar);
+
         int contadorBorrado = 0;
-        for (int i = 0; i < listado.size(); i++) {
-            if (((m.nombre.equalsIgnoreCase(borrar)) && (borrado1 != -1)) || ((m.principiosActivos.equalsIgnoreCase(borrar)) && (borrado2 != -1))) {
+        for (int i = 0; i < listado.size();) {
+            if (((listado.get(i).getNombre().equalsIgnoreCase(borrar)) && (listado.get(i).getNombre().indexOf(borrar) != -1)) || ((listado.get(i).getPrincipiosActivos().equalsIgnoreCase(borrar)) && (listado.get(i).getPrincipiosActivos().indexOf(borrar) != -1))) {
                 listado.remove(m);
                 contadorBorrado += 1;
+            } else {
+                i++;
             }
         }
     }
-    public void caducidad(GregorianCalendar fechaSistem, ArrayList<Medicamento> listado ){
-        
+
+    public void caducidad(GregorianCalendar fechaSistem) {
+
         for (int i = 0; i < listado.size(); i++) {
-            for (int j = 0; j < listado.get(i).listadoLote.size(); j++) {
-                if(listado.get(i).listadoLote.get(j).fechaCaducidad.getTimeInMillis() < fechaSistem.getTimeInMillis()){
-                    listado.get(i).listadoLote.get(j);
-                  //falta  el remove
+            for (int j = 0; j < listado.get(i).listadoLote.size();) {
+                if (listado.get(i).listadoLote.get(j).getFechaCaducidad().getTimeInMillis() <= fechaSistem.getTimeInMillis()) {
+                    listado.get(i).listadoLote.remove(j);
+                } else {
+                    j++;
                 }
-            }    
-        }       
+            }
+        }
     }
 }

@@ -1,4 +1,5 @@
 
+
 package com.dam.practica;
 
 import java.util.ArrayList;
@@ -19,7 +20,6 @@ public class Medicamento {
         this.tipo=tipo;
     }
 
-    
     
     
     public String getNombre() {
