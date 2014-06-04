@@ -7,18 +7,20 @@ import java.util.Objects;
 
 public class Medicamento {
 
-    String nombre, principiosActivos;
-    ArrayList<Lote> listadoLote;
-    int unidades,tipo;
+    private String nombre, principiosActivos;
+    public ArrayList<Lote> listadoLote;
+    private int unidades,tipo;
 
     public Medicamento(String nombre, String principiosActivos,int unidades,int tipo) {
         this.nombre = nombre;
         this.principiosActivos = principiosActivos;
         this.listadoLote = new ArrayList<>();
-        this.unidades = unidades;
+        this.unidades = 0;
         this.tipo=tipo;
     }
 
+    
+    
     public String getNombre() {
         return nombre;
     }
