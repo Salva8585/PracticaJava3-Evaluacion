@@ -1,8 +1,9 @@
 package com.dam.practica;
 
+import java.io.Serializable;
 import java.util.GregorianCalendar;
 
-public class Lote implements Comparable<Lote> {
+public class Lote implements Comparable<Lote>, Serializable {
 
     private double precio;
     private int totalUnidadesLote;

@@ -2,25 +2,35 @@
 
 package com.dam.practica;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Objects;
 
 
-public class Medicamento {
+public class Medicamento implements Serializable{
 
     private String nombre, principiosActivos;
-    public ArrayList<Lote> listadoLote;
+    private ArrayList<Lote> listadoLote;
     private int unidades,tipo;
 
     public Medicamento(String nombre, String principiosActivos,int unidades,int tipo) {
         this.nombre = nombre;
         this.principiosActivos = principiosActivos;
         this.listadoLote = new ArrayList<>();
-        this.unidades = 0;
+        this.unidades = unidades;
         this.tipo=tipo;
     }
 
+    public Medicamento(String nombre, String principiosActivos) {//constructor de busqueda
+        this.nombre = nombre;
+        this.principiosActivos = principiosActivos;
+    }
     
+//    public Medicamento (String valor, boolean estado) {
+//        if (estado) nombre = valor;
+//        else principiosActivos = valor;
+//    }
+
     
     public String getNombre() {
         return nombre;
@@ -50,12 +60,18 @@ public class Medicamento {
         return tipo;
     }
     
-    
-
-    public boolean equals(Medicamento obj) {
+    @Override
+    public boolean equals(Object obj) {
+ 
         Medicamento m = (Medicamento) obj;
-        return ((m.nombre.equals(nombre)) && (m.principiosActivos.equals(principiosActivos)));
-
+        if (m.nombre == null) {
+            if(m.principiosActivos.contains(principiosActivos)) return true;
+            else return false;
+        }
+        else {
+            if(m.nombre.contains(nombre)) return true;
+            else return false;
+        }
     }
     @Override
     public String toString() {
