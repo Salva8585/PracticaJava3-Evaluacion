@@ -66,6 +66,7 @@ public class Ejecuta {
                     System.out.println("- 1 busqueda por nombre");
                     System.out.println("-2 busqueda por  principio activo");
                     int op2 = s.nextInt();
+                    s.nextLine();
                     switch (op2) {
                         case 1: {
                             System.out.println("-Introduzca el nombre del medicamento =");

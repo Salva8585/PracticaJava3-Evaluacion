@@ -64,12 +64,12 @@ public class Medicamento implements Serializable{
     public boolean equals(Object obj) {
  
         Medicamento m = (Medicamento) obj;
-        if (m.nombre == null) {
-            if(m.principiosActivos.contains(principiosActivos)) return true;
+        if (nombre == null) {
+            if(principiosActivos.contains(principiosActivos)) return true;
             else return false;
         }
         else {
-            if(m.nombre.contains(nombre)) return true;
+            if(nombre.contains(nombre)) return true;
             else return false;
         }
     }
